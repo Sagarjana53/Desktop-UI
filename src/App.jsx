@@ -38,6 +38,7 @@ import asset35 from './assets/asset 35.png'
 import asset36 from './assets/asset 36.jpeg'
 import asset37 from './assets/asset 37.svg'
 import asset38 from './assets/react.svg'
+import asset66 from './assets/asset 66.svg'
 import './App.css'
 import { useEffect } from "react";
 function App() {
@@ -47,68 +48,68 @@ function App() {
     setMenuOpen(!menuOpen)
   }
 
-// === Constants for initial transforms ===
-const initialTranslateLTR = -48 * 4; // matches Tailwind: -translate-x-48
-const initialTranslateRTL = 36 * 4;  // matches Tailwind: translate-x-36
+  // === Constants for initial transforms ===
+  const initialTranslateLTR = -48 * 4; // matches Tailwind: -translate-x-48
+  const initialTranslateRTL = 36 * 4;  // matches Tailwind: translate-x-36
 
-function setupIntersectionObserver(element, isLTR, speed) {
-  // --- Define the scroll animation handler ---
-  function scrollHandler() {
-    // Distance between viewport bottom and element top
-    const translateX = (window.innerHeight - element.getBoundingClientRect().top) * speed;
-    let totalTranslate = 0;
+  function setupIntersectionObserver(element, isLTR, speed) {
+    // --- Define the scroll animation handler ---
+    function scrollHandler() {
+      // Distance between viewport bottom and element top
+      const translateX = (window.innerHeight - element.getBoundingClientRect().top) * speed;
+      let totalTranslate = 0;
 
-    // Calculate direction
-    if (isLTR) {
-      totalTranslate = translateX + initialTranslateLTR;
-    } else {
-      totalTranslate = -(translateX + initialTranslateRTL);
+      // Calculate direction
+      if (isLTR) {
+        totalTranslate = translateX + initialTranslateLTR;
+      } else {
+        totalTranslate = -(translateX + initialTranslateRTL);
+      }
+
+      // ✅ Clamp movement so it doesn’t slide out or create gaps
+      const maxTranslate = 200; // adjust this for desired travel distance
+      totalTranslate = Math.max(Math.min(totalTranslate, maxTranslate), -maxTranslate);
+
+      // Apply transform
+      element.style.transform = `translateX(${totalTranslate}px)`;
     }
 
-    // ✅ Clamp movement so it doesn’t slide out or create gaps
-    const maxTranslate = 200; // adjust this for desired travel distance
-    totalTranslate = Math.max(Math.min(totalTranslate, maxTranslate), -maxTranslate);
+    // --- Intersection Observer setup ---
+    const intersectionCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Start animating when visible (only once)
+          document.addEventListener("scroll", scrollHandler, { passive: true });
+          scrollHandler(); // run immediately
+        } else {
+          // Stop animating when not visible
+          document.removeEventListener("scroll", scrollHandler);
+        }
+      });
+    };
 
-    // Apply transform
-    element.style.transform = `translateX(${totalTranslate}px)`;
+    const observer = new IntersectionObserver(intersectionCallback);
+    observer.observe(element);
   }
 
-  // --- Intersection Observer setup ---
-  const intersectionCallback = (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        // Start animating when visible (only once)
-        document.addEventListener("scroll", scrollHandler, { passive: true });
-        scrollHandler(); // run immediately
-      } else {
-        // Stop animating when not visible
-        document.removeEventListener("scroll", scrollHandler);
-      }
-    });
-  };
+  // --- React useEffect for initialization ---
+  useEffect(() => {
+    const line1 = document.getElementById("line1");
+    const line2 = document.getElementById("line2");
+    const line3 = document.getElementById("line3");
 
-  const observer = new IntersectionObserver(intersectionCallback);
-  observer.observe(element);
-}
+    if (line1 && line2 && line3) {
+      setupIntersectionObserver(line1, true, 0.15);
+      setupIntersectionObserver(line2, false, 0.15);
+      setupIntersectionObserver(line3, true, 0.15);
+    } else {
+      console.warn("Some line elements not found in DOM");
+    }
 
-// --- React useEffect for initialization ---
-useEffect(() => {
-  const line1 = document.getElementById("line1");
-  const line2 = document.getElementById("line2");
-  const line3 = document.getElementById("line3");
+    // ✅ Cleanup on unmount
+    return () => { };
 
-  if (line1 && line2 && line3) {
-    setupIntersectionObserver(line1, true, 0.15);
-    setupIntersectionObserver(line2, false, 0.15);
-    setupIntersectionObserver(line3, true, 0.15);
-  } else {
-    console.warn("Some line elements not found in DOM");
-  }
-
-  // ✅ Cleanup on unmount
-  return () => {};
-
-}, []);
+  }, []);
 
 
   return (
@@ -206,7 +207,7 @@ useEffect(() => {
         {/* ================== HERO SECTION ================== */}
         <div
           id="hero"
-          className="min-h-screen bg-gradient-to-b from-cyan-100 via-green-100 to-transparent"
+          className="min-h-screen bg-gradient-to-br from-cyan-100 via-green-100 to-transparent"
         >
 
           {/* ---------- HERO CONTAINER ---------- */}
@@ -436,6 +437,154 @@ useEffect(() => {
                   <span className='text-[12px] md:text-[16px] font-semibold'>Unbounce</span>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+        {/* step by step */}
+        <div id="steps" className="flex flex-col gap-6 px-6 sm:px-10 lg:px-12 py-12 mt-16 lg:mt-32 overflow-hidden sm:justify-between items-center">
+          <h2 className="font-[Poppins] text-5xl font-medium sm:font-semibold mb-14 self-start text-left">How it works</h2>
+          <div id="step1" className="rounded-xl border border-cyan-500 px-8 py-12 flex flex-col lg:flex-row justify-around">
+            <div className='flex flex-col gap-6 lg:w-1/2'>
+              <span className='border border-cyan-300 bg-cyan-50 text-cyan-700 w-fit px-3 py-1 rounded-lg font-medium font-[Poppins]'>Step1</span>
+              <h3 className='text-4xl font-[Poppins] font-medium'>Bootstrap straight from your web app</h3>
+              <p className='text-lg font-light font-[Poppins]'>Copy and paste your web app url into ToDesktop. Customise your app design, app icon and window frame UI with no code.</p>
+              <ul className='grid grid-cols-2 gap-2'>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <a href="#" className="text-lg font-light border-b-2 border-[cyan/0.3] hover:border-blue-300">
+                    Multiple windows
+                  </a>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <a href="#" className="text-lg font-light border-b-2 border-[cyan/0.3] hover:border-blue-300">
+                    Multiple windows
+                  </a>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <a href="#" className="text-lg font-light border-b-2 border-[cyan/0.3] hover:border-blue-300">
+                    Multiple windows
+                  </a>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <a href="#" className="text-lg font-light border-b-2 border-[cyan/0.3] hover:border-blue-300">
+                    Multiple windows
+                  </a>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <a href="#" className="text-lg font-light border-b-2 border-[cyan/0.3] hover:border-blue-300">
+                    Multiple windows
+                  </a>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <a href="#" className="text-lg font-light border-b-2 border-[cyan/0.3] hover:border-blue-300">
+                    Multiple windows
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className='pt-12 sm:m-auto'>
+              <img src={asset66} alt="" />
+            </div>
+          </div>
+          <div id="step2" className="rounded-xl border border-cyan-500 px-8 py-12 flex flex-col lg:flex-row justify-around">
+            <div className='flex flex-col gap-6 lg:w-1/2'>
+              <span className='border border-cyan-300 bg-cyan-50 text-cyan-700 w-fit px-3 py-1 rounded-lg font-medium font-[Poppins]'>Step2</span>
+              <h3 className='text-4xl font-[Poppins] font-medium'>Bootstrap straight from your web app</h3>
+              <p className='text-lg font-light font-[Poppins]'>Copy and paste your web app url into ToDesktop. Customise your app design, app icon and window frame UI with no code.</p>
+              <ul className='grid grid-cols-2 gap-2'>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <a href="#" className="text-lg font-light border-b-2 border-[cyan/0.3] hover:border-blue-300">
+                    Multiple windows
+                  </a>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <a href="#" className="text-lg font-light border-b-2 border-[cyan/0.3] hover:border-blue-300">
+                    Multiple windows
+                  </a>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <a href="#" className="text-lg font-light border-b-2 border-[cyan/0.3] hover:border-blue-300">
+                    Multiple windows
+                  </a>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <a href="#" className="text-lg font-light border-b-2 border-[cyan/0.3] hover:border-blue-300">
+                    Multiple windows
+                  </a>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <a href="#" className="text-lg font-light border-b-2 border-[cyan/0.3] hover:border-blue-300">
+                    Multiple windows
+                  </a>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <a href="#" className="text-lg font-light border-b-2 border-[cyan/0.3] hover:border-blue-300">
+                    Multiple windows
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className='pt-12 sm:m-auto'>
+              <img src={asset66} alt="" />
+            </div>
+          </div>
+          <div id="step3" className="rounded-xl border border-cyan-500 px-8 py-12 flex flex-col lg:flex-row justify-around">
+            <div className='flex flex-col gap-6 lg:w-1/2'>
+              <span className='border border-cyan-300 bg-cyan-50 text-cyan-700 w-fit px-3 py-1 rounded-lg font-medium font-[Poppins]'>Step3</span>
+              <h3 className='text-4xl font-[Poppins] font-medium'>Bootstrap straight from your web app</h3>
+              <p className='text-lg font-light font-[Poppins]'>Copy and paste your web app url into ToDesktop. Customise your app design, app icon and window frame UI with no code.</p>
+              <ul className='grid grid-cols-2 gap-2'>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <a href="#" className="text-lg font-light border-b-2 border-[cyan/0.3] hover:border-blue-300">
+                    Multiple windows
+                  </a>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <a href="#" className="text-lg font-light border-b-2 border-[cyan/0.3] hover:border-blue-300">
+                    Multiple windows
+                  </a>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <a href="#" className="text-lg font-light border-b-2 border-[cyan/0.3] hover:border-blue-300">
+                    Multiple windows
+                  </a>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <a href="#" className="text-lg font-light border-b-2 border-[cyan/0.3] hover:border-blue-300">
+                    Multiple windows
+                  </a>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <a href="#" className="text-lg font-light border-b-2 border-[cyan/0.3] hover:border-blue-300">
+                    Multiple windows
+                  </a>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <a href="#" className="text-lg font-light border-b-2 border-[cyan/0.3] hover:border-blue-300">
+                    Multiple windows
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div className='pt-12 sm:m-auto'>
+              <img src={asset66} alt="" />
             </div>
           </div>
         </div>
