@@ -39,6 +39,7 @@ import asset36 from './assets/asset 36.jpeg'
 import asset37 from './assets/asset 37.svg'
 import asset38 from './assets/react.svg'
 import asset66 from './assets/asset 66.svg'
+import asset44 from './assets/asset 44.svg'
 import './App.css'
 import { useEffect } from "react";
 function App() {
@@ -665,6 +666,56 @@ function App() {
               <span>•</span>
             </div>
           </div>
+        </div>
+
+        {/* testimonials */}
+
+        <div id="testimonials" className='gap-6 px-6 sm:px-10 lg:px-12 py-12 mt-16 lg:mt-32 overflow-hidden sm:justify-between items-center'>
+            <h2 className='font-[Poppins] text-5xl font-medium sm:font-semibold mb-14 self-start text-left'>Customer stories</h2>
+            <div className='rounded-xl border border-slate-200 flex flex-col lg:flex-row items-end'>
+              <div className='flex flex-col p-8 gap-12'>
+                <div className='h-4 w-fit'>
+                  <img src={asset44} alt="" />
+                </div>
+                <h3 className='font-[Poppins] font-medium text-xl leading-relaxed'>ClickUp used ToDesktop to get their desktop app in front of customers in days instead of months.</h3>
+                 <div id="tag-container" className='flex gap-3 flex-wrap'>
+                  <div className='flex gap-2 items-center justify-center bg-cyan-50 w-fit border border-cyan-300 px-3 py-1 rounded-md text-cyan-700'>
+                    <i className="fa-solid fa-check"></i>
+                    <span className='font-[Poppins] font-medium'>Chromeless UI</span>
+                  </div>
+                  <div className='flex gap-2 items-center justify-center bg-cyan-50 w-fit border border-cyan-300 px-3 py-1 rounded-md text-cyan-700'>
+                    <i className="fa-solid fa-check"></i>
+                    <span className='font-[Poppins] font-medium'>Native spellcheck</span>
+                  </div>
+                  <div className='flex gap-2 items-center justify-center bg-cyan-50 w-fit border border-cyan-300 px-3 py-1 rounded-md text-cyan-700'>
+                    <i className="fa-solid fa-check"></i>
+                    <span className='font-[Poppins] font-medium'>Task time in menubar</span>
+                  </div>
+                  <div className='flex gap-2 items-center justify-center bg-cyan-50 w-fit border border-cyan-300 px-3 py-1 rounded-md text-cyan-700'>
+                    <i className="fa-solid fa-check"></i>
+                    <span className='font-[Poppins] font-medium'>Notification count in the dock</span>
+                  </div>
+                  <div className='flex gap-2 items-center justify-center bg-cyan-50 w-fit border border-cyan-300 px-3 py-1 rounded-md text-cyan-700'>
+                    <i className="fa-solid fa-check"></i>
+                    <span className='font-[Poppins] font-medium'>Global hotkey to create task</span>
+                  </div>
+                 </div>
+                <p className='text-lg font-light text-gray-700'>“ToDesktop provided us with <span className='text-cyan-900 font-semibold'>a polished desktop app</span> in no time. Their expert team guided us through a smooth migration from our outdated legacy desktop app, enabling us to deliver <span className='text-cyan-900 font-semibold'>new and improved features</span> to our customers within days.”</p>
+                <div id="user-card" className='flex gap-4'>
+                  <div className='w-12'>
+                    <img src={asset33} className='rounded-full' alt="" />
+                  </div>
+                  <div className='flex flex-col'>
+                    <h3>Zeb Evans</h3>
+                    <p className='text-gray-500'>Founder & CEO, <a href="#" className='border-b border-dotted border-y-cyan-300 hover:border-solid hover:border-cyan-600'>ClickUp</a></p>
+                  </div>
+                </div>
+              </div>
+              <div id="right">
+                  <img src={asset34} alt=""  className='pl-12'/>
+              </div>
+            </div>
+            
         </div>
         <div className='h-[1000px]'></div>
       </main>
