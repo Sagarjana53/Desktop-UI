@@ -97,11 +97,13 @@ function App() {
     const line1 = document.getElementById("line1");
     const line2 = document.getElementById("line2");
     const line3 = document.getElementById("line3");
+    const line4 = document.getElementById("line4");
 
     if (line1 && line2 && line3) {
       setupIntersectionObserver(line1, true, 0.15);
       setupIntersectionObserver(line2, false, 0.15);
       setupIntersectionObserver(line3, true, 0.15);
+      setupIntersectionObserver(line4, true, 0.8);
     } else {
       console.warn("Some line elements not found in DOM");
     }
@@ -161,7 +163,7 @@ function App() {
         <div
           id="nav-dialog"
           className={`${menuOpen ? 'block' : 'hidden'
-            } fixed z-10 lg:hidden bg-white inset-0 p-3 transition-all duration-300`}
+            } fixed z-10 lg:hidden bg-slate-50 inset-0 p-3 transition-all duration-300`}
         >
 
           {/* ----- MOBILE NAVBAR HEADER ----- */}
@@ -585,6 +587,82 @@ function App() {
             </div>
             <div className='pt-12 sm:m-auto'>
               <img src={asset66} alt="" />
+            </div>
+          </div>
+        </div>
+
+        {/* bento grid  */}
+        <div id='bento-grid' className='gap-6 px-6 sm:px-10 lg:px-12 py-12 mt-16 lg:mt-32 overflow-hidden sm:justify-between items-center'>
+          <h2 className='font-[Poppins] text-5xl font-medium sm:font-semibold mb-14 self-start text-left'>ToDesktop handles the details</h2>
+          <div id="grid-container" className='flex flex-col gap-6 lg:grid lg:grid-cols-3 [grid-auto-rows:96px]'>
+            <div className='row-start-1 row-end-3 group rounded-2xl p-[1px] bg-slate-200 hover:bg-gradient-to-br hover:from-teal-200 hover:via-cyan-200 hover:to-emerald-200'>
+              <div className='bg-slate-50 rounded-2xl w-full h-full p-6 flex flex-col gap-4 items-center group-hover:bg-gradient-to-br group-hover:from-teal-50 group-hover:via-cyan-50 group-hover:to-emerald-50'>
+                <h3 className='text-2xl font-medium font-[Poppins]'>Native Notifications</h3>
+                <img src={asset28} alt="" />
+              </div>
+            </div>
+            <div className='row-start-1 row-end-4 group rounded-2xl p-[1px] bg-slate-200 hover:bg-gradient-to-br hover:from-teal-200 hover:via-cyan-200 hover:to-emerald-200'>
+              <div className='bg-slate-50 rounded-2xl w-full h-full p-6 flex flex-col gap-4 items-center group-hover:bg-gradient-to-br group-hover:from-teal-50 group-hover:via-cyan-50 group-hover:to-emerald-50'>
+                <h3 className='text-2xl font-medium font-[Poppins]'>Native Notifications</h3>
+                <p className='text-lg text-center font-light'>We’ll ensure the underlying browser is up to date and deliver performance improvements, security patches, & additional features.</p>
+                <img src={asset29} alt="" />
+              </div>
+            </div>
+            <div className='row-start-1 row-end-3 group rounded-2xl p-[1px] bg-slate-200 hover:bg-gradient-to-br hover:from-teal-200 hover:via-cyan-200 hover:to-emerald-200'>
+              <div className='bg-slate-50 rounded-2xl w-full h-full p-6 flex flex-col gap-4 items-center group-hover:bg-gradient-to-br group-hover:from-teal-50 group-hover:via-cyan-50 group-hover:to-emerald-50'>
+                <h3 className='text-2xl font-medium font-[Poppins]'>Native Notifications</h3>
+                <img src={asset30} alt="" />
+              </div>
+            </div>
+            <div className='row-start-3 row-end-6 group rounded-2xl p-[1px] bg-slate-200 hover:bg-gradient-to-br hover:from-teal-200 hover:via-cyan-200 hover:to-emerald-200'>
+              <div className='bg-slate-50 rounded-2xl w-full h-full p-6 flex flex-col gap-4 items-center group-hover:bg-gradient-to-br group-hover:from-teal-50 group-hover:via-cyan-50 group-hover:to-emerald-50'>
+                <h3 className='text-2xl font-medium font-[Poppins]'>Native Notifications</h3>
+                <p className='text-lg text-center font-light'>We’ll ensure the underlying browser is up to date and deliver performance improvements, security patches, & additional features.</p>
+                <img src={asset31} alt="" />
+              </div>
+            </div>
+            <div className='row-start-4 row-end-6 group rounded-2xl p-[1px] bg-slate-200 hover:bg-gradient-to-br hover:from-teal-200 hover:via-cyan-200 hover:to-emerald-200'>
+              <div className='bg-slate-50 rounded-2xl w-full h-full p-6 flex flex-col gap-4 items-center group-hover:bg-gradient-to-br group-hover:from-teal-50 group-hover:via-cyan-50 group-hover:to-emerald-50'>
+                <h3 className='text-2xl font-medium font-[Poppins]'>Native Notifications</h3>
+                <img src={asset28} alt="" />
+              </div>
+            </div>
+            <div className='row-start-3 row-end-6 group rounded-2xl p-[1px] bg-slate-200 hover:bg-gradient-to-br hover:from-teal-200 hover:via-cyan-200 hover:to-emerald-200'>
+              <div className='bg-slate-50 rounded-2xl w-full h-full p-6 flex flex-col gap-4 items-center group-hover:bg-gradient-to-br group-hover:from-teal-50 group-hover:via-cyan-50 group-hover:to-emerald-50'>
+                <h3 className='text-2xl font-medium font-[Poppins]'>Native Notifications</h3>
+                <p className='text-lg text-center font-light'>We’ll ensure the underlying browser is up to date and deliver performance improvements, security patches, & additional features.</p>
+                <img src={asset29} alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* companies feture line */}
+
+        <div id='feature-line' className='gap-6 px-6 sm:px-10 lg:px-12 py-12 mt-2 overflow-hidden sm:justify-between items-center'>
+
+          <div className='border border-slate-200 rounded-lg flex justify-center p-4 overflow-hidden'>
+            <div id="line4" className='flex gap-8 p-6'>
+              <h3 className='whitespace-nowrap my-0 mx-2 text-2xl font-semibold font-[Poppins]'>Download Analytics</h3>
+              <span>•</span>
+              <h3 className='whitespace-nowrap my-0 mx-2 text-2xl font-semibold font-[Poppins]'>Deep Linking</h3>
+              <span>•</span>
+              <h3 className='whitespace-nowrap my-0 mx-2 text-2xl font-semibold font-[Poppins]'>Trays</h3>
+              <span>•</span>
+              <h3 className='whitespace-nowrap my-0 mx-2 text-2xl font-semibold font-[Poppins]'>Multi-window support</h3>
+              <span>•</span>
+              <h3 className='whitespace-nowrap my-0 mx-2 text-2xl font-semibold font-[Poppins]'>Launch at starting</h3>
+              <span>•</span>
+              <h3 className='whitespace-nowrap my-0 mx-2 text-2xl font-semibold font-[Poppins]'>Download Analytics</h3>
+              <span>•</span>
+              <h3 className='whitespace-nowrap my-0 mx-2 text-2xl font-semibold font-[Poppins]'>Deep Linking</h3>
+              <span>•</span>
+              <h3 className='whitespace-nowrap my-0 mx-2 text-2xl font-semibold font-[Poppins]'>Trays</h3>
+              <span>•</span>
+              <h3 className='whitespace-nowrap my-0 mx-2 text-2xl font-semibold font-[Poppins]'>Multi-window support</h3>
+              <span>•</span>
+              <h3 className='whitespace-nowrap my-0 mx-2 text-2xl font-semibold font-[Poppins]'>Launch at starting</h3>
+              <span>•</span>
             </div>
           </div>
         </div>
