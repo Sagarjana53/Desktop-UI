@@ -671,52 +671,145 @@ function App() {
         {/* testimonials */}
 
         <div id="testimonials" className='gap-6 px-6 sm:px-10 lg:px-12 py-12 mt-16 lg:mt-32 overflow-hidden sm:justify-between items-center'>
-            <h2 className='font-[Poppins] text-5xl font-medium sm:font-semibold mb-14 self-start text-left'>Customer stories</h2>
-            <div className='rounded-xl border border-slate-200 flex flex-col lg:flex-row items-end'>
-              <div className='flex flex-col p-8 gap-12'>
-                <div className='h-4 w-fit'>
-                  <img src={asset44} alt="" />
+          <h2 className='font-[Poppins] text-5xl font-medium sm:font-semibold mb-14 self-start text-left'>Customer stories</h2>
+          <div className='rounded-xl border border-slate-200 flex flex-col lg:flex-row items-end'>
+            <div className='flex flex-col p-8 gap-12'>
+              <div className='h-4 w-fit'>
+                <img src={asset44} alt="" />
+              </div>
+              <h3 className='font-[Poppins] font-medium text-xl leading-relaxed'>ClickUp used ToDesktop to get their desktop app in front of customers in days instead of months.</h3>
+              <div id="tag-container" className='flex gap-3 flex-wrap'>
+                <div className='flex gap-2 items-center justify-center bg-cyan-50 w-fit border border-cyan-300 px-3 py-1 rounded-md text-cyan-700'>
+                  <i className="fa-solid fa-check"></i>
+                  <span className='font-[Poppins] font-medium'>Chromeless UI</span>
                 </div>
-                <h3 className='font-[Poppins] font-medium text-xl leading-relaxed'>ClickUp used ToDesktop to get their desktop app in front of customers in days instead of months.</h3>
-                 <div id="tag-container" className='flex gap-3 flex-wrap'>
-                  <div className='flex gap-2 items-center justify-center bg-cyan-50 w-fit border border-cyan-300 px-3 py-1 rounded-md text-cyan-700'>
-                    <i className="fa-solid fa-check"></i>
-                    <span className='font-[Poppins] font-medium'>Chromeless UI</span>
-                  </div>
-                  <div className='flex gap-2 items-center justify-center bg-cyan-50 w-fit border border-cyan-300 px-3 py-1 rounded-md text-cyan-700'>
-                    <i className="fa-solid fa-check"></i>
-                    <span className='font-[Poppins] font-medium'>Native spellcheck</span>
-                  </div>
-                  <div className='flex gap-2 items-center justify-center bg-cyan-50 w-fit border border-cyan-300 px-3 py-1 rounded-md text-cyan-700'>
-                    <i className="fa-solid fa-check"></i>
-                    <span className='font-[Poppins] font-medium'>Task time in menubar</span>
-                  </div>
-                  <div className='flex gap-2 items-center justify-center bg-cyan-50 w-fit border border-cyan-300 px-3 py-1 rounded-md text-cyan-700'>
-                    <i className="fa-solid fa-check"></i>
-                    <span className='font-[Poppins] font-medium'>Notification count in the dock</span>
-                  </div>
-                  <div className='flex gap-2 items-center justify-center bg-cyan-50 w-fit border border-cyan-300 px-3 py-1 rounded-md text-cyan-700'>
-                    <i className="fa-solid fa-check"></i>
-                    <span className='font-[Poppins] font-medium'>Global hotkey to create task</span>
-                  </div>
-                 </div>
-                <p className='text-lg font-light text-gray-700'>“ToDesktop provided us with <span className='text-cyan-900 font-semibold'>a polished desktop app</span> in no time. Their expert team guided us through a smooth migration from our outdated legacy desktop app, enabling us to deliver <span className='text-cyan-900 font-semibold'>new and improved features</span> to our customers within days.”</p>
-                <div id="user-card" className='flex gap-4'>
-                  <div className='w-12'>
-                    <img src={asset33} className='rounded-full' alt="" />
-                  </div>
-                  <div className='flex flex-col'>
-                    <h3>Zeb Evans</h3>
-                    <p className='text-gray-500'>Founder & CEO, <a href="#" className='border-b border-dotted border-y-cyan-300 hover:border-solid hover:border-cyan-600'>ClickUp</a></p>
-                  </div>
+                <div className='flex gap-2 items-center justify-center bg-cyan-50 w-fit border border-cyan-300 px-3 py-1 rounded-md text-cyan-700'>
+                  <i className="fa-solid fa-check"></i>
+                  <span className='font-[Poppins] font-medium'>Native spellcheck</span>
+                </div>
+                <div className='flex gap-2 items-center justify-center bg-cyan-50 w-fit border border-cyan-300 px-3 py-1 rounded-md text-cyan-700'>
+                  <i className="fa-solid fa-check"></i>
+                  <span className='font-[Poppins] font-medium'>Task time in menubar</span>
+                </div>
+                <div className='flex gap-2 items-center justify-center bg-cyan-50 w-fit border border-cyan-300 px-3 py-1 rounded-md text-cyan-700'>
+                  <i className="fa-solid fa-check"></i>
+                  <span className='font-[Poppins] font-medium'>Notification count in the dock</span>
+                </div>
+                <div className='flex gap-2 items-center justify-center bg-cyan-50 w-fit border border-cyan-300 px-3 py-1 rounded-md text-cyan-700'>
+                  <i className="fa-solid fa-check"></i>
+                  <span className='font-[Poppins] font-medium'>Global hotkey to create task</span>
                 </div>
               </div>
-              <div id="right">
-                  <img src={asset34} alt=""  className='pl-12'/>
+              <p className='text-lg font-light text-gray-700'>“ToDesktop provided us with <span className='text-cyan-900 font-semibold'>a polished desktop app</span> in no time. Their expert team guided us through a smooth migration from our outdated legacy desktop app, enabling us to deliver <span className='text-cyan-900 font-semibold'>new and improved features</span> to our customers within days.”</p>
+              <div id="user-card" className='flex gap-4'>
+                <div className='w-12'>
+                  <img src={asset33} className='rounded-full' alt="" />
+                </div>
+                <div className='flex flex-col'>
+                  <h3>Zeb Evans</h3>
+                  <p className='text-gray-500'>Founder & CEO, <a href="#" className='border-b border-dotted border-y-cyan-300 hover:border-solid hover:border-cyan-600'>ClickUp</a></p>
+                </div>
               </div>
             </div>
-            
+            <div id="right">
+              <img src={asset34} alt="" className='pl-12 lg:mt-2' />
+            </div>
+          </div>
+          <div className="flex flex-col lg:flex-row justify-between gap-4 mt-6">
+            <div className="flex rounded-2xl p-[1px] bg-slate-200 hover:bg-gradient-to-br hover:from-teal-200 hover:via-cyan-200 hover:to-emerald-200 group">
+              <div className="w-full h-full rounded-2xl group-hover:bg-gradient-to-br group-hover:from-teal-50 group-hover:via-cyan-50 group-hover:to-emerald-50 bg-slate-50 flex flex-col p-6 gap-6">
+                <div className="flex p-6 items-center gap-4">
+                  <div className="w-12 h-12 bg-blue-200 flex items-center justify-center rounded-full">
+                    <i className="fa-solid fa-code"></i>
+                  </div>
+                  <h3 className="font-[Poppins] text-2xl font-bold">Native APIs</h3>
+                </div>
+                <p className='font-[Poppins] text-lg font-light'>What sets ToDesktop apart is its seamless integration with native APIs using our existing web codebase. By tapping into APIs like Tray and Notifications, we've crafted an exceptionally polished desktop user experience.</p>
+                <div className="flex gap-4">
+                  <div className="flex">
+                    <div className="-mr-3 w-12 h-12 flex justify-center items-center rounded-full overflow-hidden border border-white">
+                      <img src={asset35} className=' min-w-16 min-h-16' alt="" />
+                    </div>
+                    <div className="w-12 h-12 rounded-full overflow-hidden border border-white">
+                      <img src={asset36} alt="" />
+                    </div>
+                  </div>
+                  <div className="flex flex-col">
+                    <h3 className='font-[Poppins]'>Rick Pastoor</h3>
+                    <a href="#" className='border-b border-dotted border-y-cyan-300 hover:border-solid hover:border-cyan-600 w-fit text-gray-500'>Rise</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex rounded-2xl p-[1px] bg-slate-200 hover:bg-gradient-to-br hover:from-teal-200 hover:via-cyan-200 hover:to-emerald-200 group">
+              <div className="w-full h-full rounded-2xl group-hover:bg-gradient-to-br group-hover:from-teal-50 group-hover:via-cyan-50 group-hover:to-emerald-50 bg-slate-50 flex flex-col p-6 gap-6">
+                <div className="flex p-6 items-center gap-4">
+                  <div className="w-12 h-12 bg-blue-200 flex items-center justify-center rounded-full">
+                    <i className="fa-solid fa-code"></i>
+                  </div>
+                  <h3 className="font-[Poppins] text-2xl font-bold">Native APIs</h3>
+                </div>
+                <p className='font-[Poppins] text-lg font-light'>What sets ToDesktop apart is its seamless integration with native APIs using our existing web codebase. By tapping into APIs like Tray and Notifications, we've crafted an exceptionally polished desktop user experience.</p>
+                <div className="flex gap-4">
+                  <div className="flex">
+                    <div className="-mr-3 w-12 h-12 flex justify-center items-center rounded-full overflow-hidden border border-white">
+                      <img src={asset35} className=' min-w-16 min-h-16' alt="" />
+                    </div>
+                    <div className="w-12 h-12 rounded-full overflow-hidden border border-white">
+                      <img src={asset36} alt="" />
+                    </div>
+                  </div>
+                  <div className="flex flex-col">
+                    <h3 className='font-[Poppins]'>Rick Pastoor</h3>
+                    <a href="#" className='border-b border-dotted border-y-cyan-300 hover:border-solid hover:border-cyan-600 w-fit text-gray-500'>Rise</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex rounded-2xl p-[1px] bg-slate-200 hover:bg-gradient-to-br hover:from-teal-200 hover:via-cyan-200 hover:to-emerald-200 group">
+              <div className="w-full h-full rounded-2xl group-hover:bg-gradient-to-br group-hover:from-teal-50 group-hover:via-cyan-50 group-hover:to-emerald-50 bg-slate-50 flex flex-col p-6 gap-6">
+                <div className="flex p-6 items-center gap-4">
+                  <div className="w-12 h-12 bg-blue-200 flex items-center justify-center rounded-full">
+                    <i className="fa-solid fa-code"></i>
+                  </div>
+                  <h3 className="font-[Poppins] text-2xl font-bold">Native APIs</h3>
+                </div>
+                <p className='font-[Poppins] text-lg font-light'>What sets ToDesktop apart is its seamless integration with native APIs using our existing web codebase. By tapping into APIs like Tray and Notifications, we've crafted an exceptionally polished desktop user experience.</p>
+                <div className="flex gap-4">
+                  <div className="flex">
+                    <div className="-mr-3 w-12 h-12 flex justify-center items-center rounded-full overflow-hidden border border-white">
+                      <img src={asset35} className=' min-w-16 min-h-16' alt="" />
+                    </div>
+                    <div className="w-12 h-12 rounded-full overflow-hidden border border-white">
+                      <img src={asset36} alt="" />
+                    </div>
+                  </div>
+                  <div className="flex flex-col">
+                    <h3 className='font-[Poppins]'>Rick Pastoor</h3>
+                    <a href="#" className='border-b border-dotted border-y-cyan-300 hover:border-solid hover:border-cyan-600 w-fit text-gray-500'>Rise</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className='rounded-xl bg-black flex flex-col lg:flex-row mt-6'>
+            <div className='flex flex-col p-8 gap-4 lg:gap-8'>
+              <span className='font-[Poppins] text-gray-400 font-medium'>READY TO START BUILDING?</span>
+              <h2 className='font-[Poppins] font-medium text-4xl  lg:text-5xl leading-tight text-cyan-100'>Create your desktop app for free*</h2>
+              <p className='font-[Poppins] text-lg lg:text-xl font-light text-cyan-200'>ToDesktop Builder will take you step-by-step through the process of creating your first desktop app in just a few minutes.</p>
+              <button className='bg-blue-700 text-white py-3 rounded-lg hover:bg-blue-600 flex justify-center items-center gap-4 cursor-pointer'>
+                <i className="fa-solid fa-download"></i>
+                <span className='font-[Poppins] '>Download ToDestop Builder</span>
+              </button>
+              <p className='font-[Poppins] text-xs font-light text-cyan-200 italic leading-tight'>*You can create a desktop app and run it on your computer for free. You will only be charged if you want to create a distributable app for your customers.</p>
+            </div>
+            <div >
+              <img src={asset34} alt="" className='pl-12 lg:mt-2' />
+            </div>
+          </div>
         </div>
+
+
         <div className='h-[1000px]'></div>
       </main>
     </>
