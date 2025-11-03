@@ -444,7 +444,7 @@ function App() {
           </div>
         </div>
         {/* step by step */}
-        <div id="steps" className="flex flex-col gap-6 px-6 sm:px-10 lg:px-12 py-12 mt-16 lg:mt-32 overflow-hidden sm:justify-between items-center">
+        <div id="steps" className="flex flex-col gap-6 px-6 sm:px-10 lg:px-12 py-12 mt-16 overflow-hidden sm:justify-between items-center">
           <h2 className="font-[Poppins] text-5xl font-medium sm:font-semibold mb-14 self-start text-left">How it works</h2>
           <div id="step1" className="rounded-xl border border-cyan-500 px-8 py-12 flex flex-col lg:flex-row justify-around">
             <div className='flex flex-col gap-6 lg:w-1/2'>
@@ -593,8 +593,8 @@ function App() {
         </div>
 
         {/* bento grid  */}
-        <div id='bento-grid' className='gap-6 px-6 sm:px-10 lg:px-12 py-12 mt-16 lg:mt-32 overflow-hidden sm:justify-between items-center'>
-          <h2 className='font-[Poppins] text-5xl font-medium sm:font-semibold mb-14 self-start text-left'>ToDesktop handles the details</h2>
+        <div id='bento-grid' className='gap-6 px-6 sm:px-10 lg:px-12 py-12 mt-16 overflow-hidden sm:justify-between items-center'>
+          <h2 className='font-[Poppins] text-5xl font-medium sm:font-semibold mb-14 self-start text-left max-w-2xl leading-normal'>ToDesktop handles the details</h2>
           <div id="grid-container" className='flex flex-col gap-6 lg:grid lg:grid-cols-3 [grid-auto-rows:96px]'>
             <div className='row-start-1 row-end-3 group rounded-2xl p-[1px] bg-slate-200 hover:bg-gradient-to-br hover:from-teal-200 hover:via-cyan-200 hover:to-emerald-200'>
               <div className='bg-slate-50 rounded-2xl w-full h-full p-6 flex flex-col gap-4 items-center group-hover:bg-gradient-to-br group-hover:from-teal-50 group-hover:via-cyan-50 group-hover:to-emerald-50'>
@@ -670,7 +670,7 @@ function App() {
 
         {/* testimonials */}
 
-        <div id="testimonials" className='gap-6 px-6 sm:px-10 lg:px-12 py-12 mt-16 lg:mt-32 overflow-hidden sm:justify-between items-center'>
+        <div id="testimonials" className='gap-6 px-6 sm:px-10 lg:px-12 py-12 mt-16 overflow-hidden sm:justify-between items-center'>
           <h2 className='font-[Poppins] text-5xl font-medium sm:font-semibold mb-14 self-start text-left'>Customer stories</h2>
           <div className='rounded-xl border border-slate-200 flex flex-col lg:flex-row items-end'>
             <div className='flex flex-col p-8 gap-12'>
@@ -809,8 +809,104 @@ function App() {
           </div>
         </div>
 
+        {/* pricing */}
 
-        <div className='h-[1000px]'></div>
+        <div className="gap-6 px-6 sm:px-10 lg:px-12 py-12 mt-16 overflow-hidden sm:justify-between items-center w-full">
+          <h2 className='font-[Poppins] text-5xl font-medium sm:font-semibold mb-14 text-left max-w-2xl leading-normal'>
+            Choose a plan that fits your needs
+          </h2>
+          <div className="flex flex-col lg:flex-row mt-6 gap-6 w-full">
+
+            <div className="rounded-xl px-8 pt-12 pb-8 flex flex-col gap-6 lg:flex-1 border-none bg-slate-100">
+              <h3 className='font-[Poppins] font-medium text-cyan-800 text-4xl'>Free</h3>
+              <p className='text-lg font-light text-cyan-700'>For personal use or testing your app.</p>
+              <p className='uppercase text-cyan-800'>Key Features</p>
+              <ul className='space-y-3'>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <span className='text-cyan-700 font-light'>Free for personal use</span>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <span className='text-cyan-700 font-light'>Free for personal use</span>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-xmark text-cyan-700"></i>
+                  <span className='text-cyan-700 font-light'>Free for personal use</span>
+                </li>
+                <li className='flex items-center gap-4'>
+                  <i className="fa-solid fa-xmark text-cyan-700"></i>
+                  <span className='text-cyan-700 font-light'>Free for personal use</span>
+                </li>
+              </ul>
+              <button className='border border-cyan-300 px-8 py-3 text-blue-800 rounded-lg hover:border-cyan-700 font-medium font-[Poppins]'>
+                Read Docs
+              </button>
+            </div>
+
+            <div className="rounded-xl px-8 pt-12 pb-8 flex flex-col gap-6 lg:flex-1 border-none bg-slate-100">
+              <h3 className='font-[Poppins] font-medium text-cyan-800 text-4xl'>Essential</h3>
+              <p className='text-lg font-light text-cyan-700'>For simple desktop apps.</p>
+              <p className='uppercase text-cyan-800'>
+                <span className='font-bold text-2xl font-[Poppins]'>$99</span>/month
+              </p>
+              <ul className='space-y-3'>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <span className='text-cyan-700 font-light'>Free for personal use</span>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <span className='text-cyan-700 font-light'>Free for personal use</span>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-xmark text-cyan-700"></i>
+                  <span className='text-cyan-700 font-light'>Free for personal use</span>
+                </li>
+                <li className='flex items-center gap-4'>
+                  <i className="fa-solid fa-xmark text-cyan-700"></i>
+                  <span className='text-cyan-700 font-light'>Free for personal use</span>
+                </li>
+              </ul>
+              <button className='border border-cyan-300 px-8 py-3 text-blue-800 rounded-lg hover:border-cyan-700 font-medium font-[Poppins]'>
+                Read Docs
+              </button>
+            </div>
+
+            <div className="relative rounded-xl px-8 pt-12 pb-8 flex flex-col gap-6 lg:flex-1 border-none bg-slate-100">
+              <p className='text-cyan-800 text-sm bg-cyan-100 rounded-full w-fit px-4 py-2 font-[Poppins] font-semibold absolute top-0 right-8 -translate-y-1/2'>
+                Most Popular
+              </p>
+              <h3 className='font-[Poppins] font-medium text-cyan-800 text-4xl'>Professional</h3>
+              <p className='text-lg font-light text-cyan-700'>For sophisticated desktop apps.</p>
+              <p className='uppercase text-cyan-800'>
+                <span className='font-bold text-2xl font-[Poppins]'>$240</span>/month
+              </p>
+              <ul className='space-y-3'>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <span className='text-cyan-700 font-light'>Free for personal use</span>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-check text-cyan-700"></i>
+                  <span className='text-cyan-700 font-light'>Free for personal use</span>
+                </li>
+                <li className='flex gap-4'>
+                  <i className="fa-solid fa-xmark text-cyan-700"></i>
+                  <span className='text-cyan-700 font-light'>Free for personal use</span>
+                </li>
+                <li className='flex items-center gap-4'>
+                  <i className="fa-solid fa-xmark text-cyan-700"></i>
+                  <span className='text-cyan-700 font-light'>Free for personal use</span>
+                </li>
+              </ul>
+              <button className='bg-blue-700 text-white py-3 rounded-lg hover:bg-blue-600 flex justify-center items-center gap-4 cursor-pointer'>
+                Read Docs
+              </button>
+            </div>
+
+          </div>
+        </div>
       </main>
     </>
   )
