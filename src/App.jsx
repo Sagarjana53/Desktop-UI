@@ -114,6 +114,30 @@ function App() {
 
   }, []);
 
+  useEffect(() => {
+    const dtElements = document.querySelectorAll("#faq dt");
+
+    const handleClick = (event) => {
+      const dt = event.currentTarget;
+      const ddId = dt.getAttribute("aria-controls");
+      const ddElement = document.getElementById(ddId);
+      const icon = dt.querySelector("i");
+
+      ddElement.classList.toggle("hidden");
+      icon.classList.toggle("-rotate-180");
+    };
+
+    dtElements.forEach((dt) => {
+      dt.addEventListener("click", handleClick);
+    });
+
+    return () => {
+      dtElements.forEach((dt) => {
+        dt.removeEventListener("click", handleClick);
+      });
+    };
+  }, []);
+
 
   return (
     <>
@@ -907,6 +931,69 @@ function App() {
 
           </div>
         </div>
+
+        {/* faq */}
+        <div id="faq" className='gap-6 px-6 sm:px-10 lg:px-12 py-12 mt-16 overflow-hidden sm:justify-between items-center'>
+          <h2 className='font-[Poppins] text-5xl font-medium sm:font-semibold mb-14 text-left max-w-2xl leading-normal'>FAQs</h2>
+          <div className='grid grid-cols-1 lg:grid-cols-2 mt-6 gap-6 items-start'>
+            <div className='group cursor-pointer rounded-xl border border-cyan-200 bg-slate-100 p-6'>
+              <dt className='flex justify-between items-center' aria-controls='faq-1'>
+                <p className='font-[Poppins] font-semibold text-cyan-800 text-lg'>Is ToDesktop For Me?</p>
+                <i className="fa-solid fa-chevron-up text-cyan-800 -rotate-180"></i>
+              </dt>
+              <dd id='faq-1' className='hidden text-lg font-light mt-6'>
+                <p>That depends! If you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+              </dd>
+            </div>
+            <div className='group cursor-pointer rounded-xl border border-cyan-200 bg-slate-100 p-6'>
+              <dt className='flex justify-between items-center' aria-controls='faq-2'>
+                <p className='font-[Poppins] font-semibold text-cyan-800 text-lg'>Is ToDesktop For Me?</p>
+                <i className="fa-solid fa-chevron-up text-cyan-800 -rotate-180"></i>
+              </dt>
+              <dd id='faq-2' className='hidden text-lg font-light mt-6'>
+                <p>That depends! If you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+              </dd>
+            </div>
+            <div className='group cursor-pointer rounded-xl border border-cyan-200 bg-slate-100 p-6'>
+              <dt className='flex justify-between items-center' aria-controls='faq-3'>
+                <p className='font-[Poppins] font-semibold text-cyan-800 text-lg'>Is ToDesktop For Me?</p>
+                <i className="fa-solid fa-chevron-up text-cyan-800 -rotate-180"></i>
+              </dt>
+              <dd id='faq-3' className='hidden text-lg font-light mt-6'>
+                <p>That depends! If you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+              </dd>
+            </div>
+            <div className='group cursor-pointer rounded-xl border border-cyan-200 bg-slate-100 p-6'>
+              <dt className='flex justify-between items-center' aria-controls='faq-4'>
+                <p className='font-[Poppins] font-semibold text-cyan-800 text-lg'>Is ToDesktop For Me?</p>
+                <i className="fa-solid fa-chevron-up text-cyan-800 -rotate-180"></i>
+              </dt>
+              <dd id='faq-4' className='hidden text-lg font-light mt-6'>
+                <p>That depends! If you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+              </dd>
+            </div>
+            <div className='group cursor-pointer rounded-xl border border-cyan-200 bg-slate-100 p-6'>
+              <dt className='flex justify-between items-center' aria-controls='faq-5'>
+                <p className='font-[Poppins] font-semibold text-cyan-800 text-lg'>Is ToDesktop For Me?</p>
+                <i className="fa-solid fa-chevron-up text-cyan-800 -rotate-180"></i>
+              </dt>
+              <dd id='faq-5' className='hidden text-lg font-light mt-6'>
+                <p>That depends! If you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+              </dd>
+            </div>
+            <div className='group cursor-pointer rounded-xl border border-cyan-200 bg-slate-100 p-6'>
+              <dt className='flex justify-between items-center' aria-controls='faq-6'>
+                <p className='font-[Poppins] font-semibold text-cyan-800 text-lg'>Is ToDesktop For Me?</p>
+                <i className="fa-solid fa-chevron-up text-cyan-800 -rotate-180"></i>
+              </dt>
+              <dd id='faq-6' className='hidden text-lg font-light mt-6'>
+                <p>That depends! If you would like to distribute your web app to your users as a downloadable desktop app then ToDesktop is for you.</p>
+              </dd>
+            </div>
+          </div>
+        </div>
+
+
       </main>
     </>
   )
