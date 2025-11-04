@@ -1014,7 +1014,7 @@ function App() {
         </div>
         <div id="subfooter" className='flex flex-col gap-6 items-center justify-center my-12'>
           <div className='flex gap-2 items-center'>
-            <img src={asset54} alt="logo" className='w-4 h-4'/>
+            <img src={asset54} alt="logo" className='w-4 h-4' />
             <p className='text-sm font-[Poppins] text-cyan-600'>A Y Combinator Company.</p>
           </div>
           <p className='text-sm font-[Poppins] text-cyan-600'>© 2024 ToDesktop, Inc. All rights reserved.@Sagar Jana</p>
