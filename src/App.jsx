@@ -40,6 +40,7 @@ import asset37 from './assets/asset 37.svg'
 import asset38 from './assets/react.svg'
 import asset66 from './assets/asset 66.svg'
 import asset44 from './assets/asset 44.svg'
+import asset54 from './assets/asset 54.svg'
 import './App.css'
 import { useEffect } from "react";
 function App() {
@@ -142,7 +143,7 @@ function App() {
   return (
     <>
       {/* ================== NAVBAR SECTION ================== */}
-      <nav className="p-3 flex bg-white justify-between items-center shadow-black">
+      <nav className="p-3 flex bg-white justify-between items-center fixed top-0 left-0 right-0 z-20 shadow-md">
         {/* ---------- BRAND / LOGO ---------- */}
         <a href="#" id="brand" className="flex gap-2 items-center flex-1">
           <img
@@ -246,7 +247,7 @@ function App() {
             {/* ---------- VERSION TEXT ---------- */}
             <div
               id="version-text"
-              className="flex items-center my-6 gap-2 border border-cyan-300 bg-cyan-50 rounded-lg px-3 py-1 w-fit shadow-md hover:shadow-lg hover:-translate-y-1 transition group"
+              className="flex items-center my-6 gap-2 border border-cyan-300 bg-cyan-50 rounded-lg px-3 py-1 w-fit shadow-md hover:shadow-lg hover:-translate-y-1 transition group mt-24 lg:mt-12"
             >
               {/* Version Indicator Dot */}
               <div className="w-2 h-2 bg-cyan-400 rounded-full border border-cyan-600"></div>
@@ -992,9 +993,33 @@ function App() {
             </div>
           </div>
         </div>
-
-
       </main>
+      <footer className='gap-6 px-6 sm:px-10 lg:px-12 py-12 mt-16 overflow-hidden sm:justify-between items-center w-full'>
+        <div className='rounded-lg border lg:border-none border-cyan-200 bg-slate-200 flex flex-col lg:flex-row-reverse items-center px-8 py-12 gap-8'>
+          <a href="#" className='font-[Poppins] font-light text-cyan-600'>Documentation</a>
+          <div className='flex gap-8 text-lg'>
+            <a href="#" className='text-cyan-600 hover:text-cyan-800'><i className="fa-brands fa-twitter"></i></a>
+            <a href="#" className='text-cyan-600 hover:text-cyan-800'><i className="fa-brands fa-github"></i></a>
+          </div>
+          <a href="#" id="brand" className="flex gap-2 items-center flex-1">
+            <img
+              src={asset0}
+              alt="logo"
+              className="object-cover max-w-12 max-h-12"
+            />
+            <span className="text-lg font-medium font-[Poppins] text-cyan-600">
+              ToDesktop
+            </span>
+          </a>
+        </div>
+        <div id="subfooter" className='flex flex-col gap-6 items-center justify-center my-12'>
+          <div className='flex gap-2 items-center'>
+            <img src={asset54} alt="logo" className='w-4 h-4'/>
+            <p className='text-sm font-[Poppins] text-cyan-600'>A Y Combinator Company.</p>
+          </div>
+          <p className='text-sm font-[Poppins] text-cyan-600'>© 2024 ToDesktop, Inc. All rights reserved.@Sagar Jana</p>
+        </div>
+      </footer>
     </>
   )
 }
